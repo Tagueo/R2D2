@@ -4,7 +4,7 @@ import { Message, MessageAttachment } from 'discord.js';
 import { logger } from "../modules/logger";
 import Levels from "../modules/levels";
 
-module.exports = (client: R2D2, message: Message) => {
+module.exports = async (client: R2D2, message: Message) => {
   if (!message.guild) return;
 
   if (message.author.bot) return;
@@ -20,9 +20,10 @@ module.exports = (client: R2D2, message: Message) => {
   if (message.content.length > 4) {
     const userId = message.author.id;
 
-    Levels.addUserIfNotExists(userId).then(() => {
-      Levels.addXpToUser(userId);
-    })
+    const next = await Levels.addUserIfNotExists(userId);
+
+    if (next)
+      Levels.addXpToUser(userId, message);
   }
   
   if (message.content.toLowerCase().startsWith(botPrefix)) {
