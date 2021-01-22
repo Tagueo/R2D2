@@ -1,10 +1,14 @@
-import * as Discord from "discord.js";
-import Enmap = require("enmap");
-import * as fs from "fs";
-import * as chalk from "chalk";
-import moment = require("moment");
+import Discord from "discord.js";
+import fs from "fs";
+import chalk from "chalk";
+import Levels from "./modules/levels";
+import moment from "moment";
+import Enmap from "enmap";
+
 
 import token from "./token.json";
+
+Levels.init();
 
 export class R2D2 extends Discord.Client {
 	public commands = new Enmap();

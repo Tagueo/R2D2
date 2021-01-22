@@ -1,14 +1,13 @@
-import chalk from "chalk";
-import moment from "moment";
 import fs from "fs";
 import { R2D2 } from "../bot";
 import { TextChannel } from "discord.js";
+import { logger } from "../modules/logger";
 
 import config from "../config.json";
-import { Config } from "..";
+import { Config } from "../types";
 
 module.exports = async (r2d2: R2D2) => {
-	console.log(`[${chalk.cyan(moment(Date.now()).format("h:mm:ss"))}] [${chalk.yellow(r2d2.user?.tag)}] Bip boup`);
+	logger("Event", "Bip boup", "success")
 
 	r2d2.user?.setActivity('r2d2 help | Elo : D2 53LP', {
 		type: 'WATCHING'
@@ -38,7 +37,7 @@ module.exports = async (r2d2: R2D2) => {
 
 		await fs.writeFileSync("./config.json", JSON.stringify(configjs));
 
-		console.log(`[${chalk.cyan(moment(Date.now()).format("h:mm:ss"))}] [${chalk.yellow(r2d2.user?.tag)}] Fake donation generated : ${amount}€ -> next fake donation in ${timeout/60/60/1000} hours`);
+		logger("Donation", `Fake donation generated : ${amount}€ -> next fake donation in ${timeout/60/60/1000} hours`, "info")
 
 		setTimeout(() => {
 			fakeDon()

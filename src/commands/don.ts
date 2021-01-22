@@ -1,6 +1,6 @@
 import { Message, TextChannel } from "discord.js";
 import { R2D2 } from "../bot";
-import { Config } from "..";
+import { Config } from "../types";
 import fs from "fs";
 
 import config from "../config.json";

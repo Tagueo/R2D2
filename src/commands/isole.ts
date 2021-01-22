@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import { Config, IsoleConfig } from "..";
+import { Config, IsoleConfig } from "../types";
 import { R2D2 } from "../bot";
 
 import config from "../config.json";

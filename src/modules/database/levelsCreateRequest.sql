@@ -1,0 +1,2 @@
+CREATE DATABASE r2d2;
+CREATE TABLE levels (userId VARCHAR(255), userLevel BIGINT, userXp BIGINT);

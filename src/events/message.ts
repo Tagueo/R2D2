@@ -1,7 +1,8 @@
 import { R2D2 } from "../bot";
 import chalk from "chalk";
-import moment from "moment";
 import { Message, MessageAttachment } from 'discord.js';
+import { logger } from "../modules/logger";
+import Levels from "../modules/levels";
 
 module.exports = (client: R2D2, message: Message) => {
   if (!message.guild) return;
@@ -14,6 +15,14 @@ module.exports = (client: R2D2, message: Message) => {
     const attachment = new MessageAttachment('https://i.imgur.com/ParX3Tr.png');
     // Send the attachment in the message channel
     message.reply(attachment);
+  }
+
+  if (message.content.length > 4) {
+    const userId = message.author.id;
+
+    Levels.addUserIfNotExists(userId).then(() => {
+      Levels.addXpToUser(userId);
+    })
   }
   
   if (message.content.toLowerCase().startsWith(botPrefix)) {
@@ -29,8 +38,8 @@ module.exports = (client: R2D2, message: Message) => {
       }
     
       cmd.run(client, message, args);
-    
-      console.log(`[${chalk.cyan(moment(Date.now()).format("h:mm:ss"))}] [${chalk.yellow(message.author.tag)}] used ${chalk.green(command)} ${chalk.cyan(args.join(" "))}`);
+      
+      logger("Command", `[${chalk.yellow(message.author.tag)}] used ${chalk.green(command)} ${chalk.cyan(args.join(" "))}`)
     }
   }
 };
