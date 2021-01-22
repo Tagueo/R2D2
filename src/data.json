@@ -1,0 +1,143 @@
+{
+  "bet": {
+    "ingame": false,
+    "opened": false,
+    "users": []
+  },
+  "leaderboard": {
+    "users": [
+      "242408148269400076",
+      "319171195163377664",
+      "126381029761089537",
+      "305005401089376256",
+      "726195034793443340",
+      "239057417311092736",
+      "234656503099949056"
+    ],
+    "data": {
+      "242408148269400076": {
+        "points": 12,
+        "won": 8
+      },
+      "319171195163377664": {
+        "points": 5,
+        "won": 4
+      },
+      "126381029761089537": {
+        "points": 0,
+        "won": 0
+      },
+      "305005401089376256": {
+        "points": 5,
+        "won": 3
+      },
+      "726195034793443340": {
+        "points": 17,
+        "won": 5
+      },
+      "239057417311092736": {
+        "points": 22,
+        "won": 8
+      },
+      "234656503099949056": {
+        "points": 5,
+        "won": 3
+      }
+    }
+  },
+  "zlan": {
+    "bets": [
+      {
+        "id": "239057417311092736",
+        "teamname": "sardoche",
+        "tier": "quarts"
+      },
+      {
+        "id": "239057417311092736",
+        "teamname": "domingo",
+        "tier": "quarts"
+      },
+      {
+        "id": "239057417311092736",
+        "teamname": "etoiles",
+        "tier": "quarts"
+      },
+      {
+        "id": "563679499871584287",
+        "teamname": "sardoche",
+        "tier": "quarts"
+      }, {
+        "id": "620950885324816384",
+        "teamname": "kennystream",
+        "tier": "quarts"
+      }, {
+        "id": "239057417311092736",
+        "teamname": "kennystream",
+        "tier": "quarts"
+      }, {
+        "id": "234656503099949056",
+        "teamname": "etoiles",
+        "tier": "quarts"
+      }, {
+        "id": "234656503099949056",
+        "teamname": "sardoche",
+        "tier": "quarts"
+      }, {
+        "id": "234656503099949056",
+        "teamname": "skyyart",
+        "tier": "quarts"
+      }, {
+        "id": "234656503099949056",
+        "teamname": "kennystream",
+        "tier": "quarts"
+      }, {
+        "id": "239057417311092736",
+        "teamname": "etoiles",
+        "tier": "demis"
+      }, {
+        "id": "239057417311092736",
+        "teamname": "kennystream",
+        "tier": "demis"
+      }, {
+        "id": "234656503099949056",
+        "teamname": "etoiles",
+        "tier": "demis"
+      }, {
+        "id": "234656503099949056",
+        "teamname": "kennystream",
+        "tier": "demis"
+      }, {
+        "id": "563679499871584287",
+        "teamname": "kennystream",
+        "tier": "demis"
+      }, {
+        "id": "563679499871584287",
+        "teamname": "astronauter",
+        "tier": "demis"
+      }, {
+        "id": "620950885324816384",
+        "teamname": "kennystream",
+        "tier": "demis"
+      }
+    ],
+    "leaderboard": {
+      "239057417311092736": {
+        "points": 27
+      },
+      "563679499871584287": {
+        "points": 9
+      },
+      "234656503099949056": {
+        "points": 30
+      },
+      "620950885324816384": {
+        "points": 9
+      }
+    },
+    "opened": {
+      "quarts": false,
+      "demis": false,
+      "finale": true
+    }
+  }
+}
