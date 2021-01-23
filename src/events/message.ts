@@ -2,7 +2,7 @@ import { R2D2 } from "../bot";
 import chalk from "chalk";
 import { Message, MessageAttachment } from 'discord.js';
 import { logger } from "../modules/logger";
-import Levels from "../modules/levels";
+import Leveling from "../modules/leveling";
 
 module.exports = async (client: R2D2, message: Message) => {
   if (!message.guild) return;
@@ -15,15 +15,6 @@ module.exports = async (client: R2D2, message: Message) => {
     const attachment = new MessageAttachment('https://i.imgur.com/ParX3Tr.png');
     // Send the attachment in the message channel
     message.reply(attachment);
-  }
-
-  if (message.content.length > 4) {
-    const userId = message.author.id;
-
-    const next = await Levels.addUserIfNotExists(userId);
-
-    if (next)
-      Levels.addXpToUser(userId, message);
   }
   
   if (message.content.toLowerCase().startsWith(botPrefix)) {
@@ -42,5 +33,12 @@ module.exports = async (client: R2D2, message: Message) => {
       
       logger("Command", `[${chalk.yellow(message.author.tag)}] used ${chalk.green(command)} ${chalk.cyan(args.join(" "))}`)
     }
+  } else if (message.content.length >= 4) {
+    const userId = message.author.id;
+
+    const next = await Leveling.addUserIfNotExists(message.guild.id, userId);
+
+    if (next)
+      Leveling.addXpToUser(userId, message);
   }
 };

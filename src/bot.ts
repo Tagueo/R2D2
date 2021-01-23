@@ -1,22 +1,18 @@
 import Discord from "discord.js";
 import fs from "fs";
 import chalk from "chalk";
-import Levels from "./modules/levels";
+import Leveling from "./modules/leveling";
 import moment from "moment";
 import Enmap from "enmap";
 
 
 import token from "./token.json";
 
-Levels.init();
-
 export class R2D2 extends Discord.Client {
 	public commands = new Enmap();
 }
 
-const r2d2 = new R2D2({
-	fetchAllMembers: true,
-});
+const r2d2 = new R2D2();
 
 fs.readdir("./events/", (err, files) => {
 	console.log(`[${chalk.cyan(moment(Date.now()).format("h:mm:ss"))}] ${chalk.cyan("Loading events ...")}`)
