@@ -21,7 +21,7 @@ module.exports = async (r2d2: R2D2) => {
 
 	Leveling.init(r2d2);
 
-	fakeDon()
+	// fakeDon()
 
 	async function fakeDon() {
 		const timeout = generateDelay();

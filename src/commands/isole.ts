@@ -34,7 +34,7 @@ async function isole(message: Message, args: Array<string>, addRoleId: string, r
     
 
       if (args[1] && addRole && removeRole) {
-        member.roles.remove(addRole);
+        member.roles.add(addRole);
         member.roles.remove(removeRole);
         
         message.channel.send(`${user} à été ISOLED pour ${args[1]} minute(s) <:rire2:727078428184150077>`);
@@ -48,7 +48,7 @@ async function isole(message: Message, args: Array<string>, addRoleId: string, r
           message.channel.send(`${user} n'est plus isolé <:sardSad:727078428121104407>`);
         }, time);
       } else if (addRole && removeRole) {
-        member.roles.remove(addRole);
+        member.roles.add(addRole);
         member.roles.remove(removeRole);
 
         message.channel.send(`${user} à été ISOLED <:rire2:727078428184150077>`);

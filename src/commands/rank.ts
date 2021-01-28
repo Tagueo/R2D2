@@ -5,6 +5,11 @@ import Leveling from "../modules/leveling";
 
 module.exports.run = async (client: R2D2, message: Message, args: Array<string>) => {
     const user = await Leveling.getUserXp(message.guild.id, message.author.id);
+
+    if (!user) {
+        return message.channel.send("Il s'agirait de parler avant d'essayer de faire cette commande");
+    }
+
     let maxXp = Leveling.getMaxXp(user.userLevel);
 
     let progress = (user.userXp / maxXp) * 20;
