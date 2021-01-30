@@ -11,3 +11,7 @@ Entry file is ``bot.ts``, and default build directory provided by the ``tsconfig
 [Add to your Server](https://discord.com/oauth2/authorize?client_id=721307763027738705&scope=bot&permissions=8)
 
 Please note that there is no config commands yet so several commands may not work.
+
+**Example of the commands:**
+
+![commands](https://i.imgur.com/JjdO1wY.png)
